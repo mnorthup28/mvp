@@ -1,5 +1,3 @@
-console.log("here");
-
 const distanceInput = document.getElementById("distance");
 const distanceValue = document.getElementById("distanceValue");
 
@@ -12,3 +10,26 @@ distanceInput.addEventListener("input", function () {
     distanceValue.textContent = distanceInput.value + " Miles";
   }
 });
+
+const form = document.getElementsByClassName("submit");
+form.addEventListener("click", (event) => {
+  event.preventDefault();
+  console.log("hello");
+});
+//   fetch("/trails")
+//     .then((response) => {
+//       return response.json();
+//     })
+//     .then((trails) => {
+//       for (let trail of trails) {
+//         const p = document.createElement("p");
+//         p.innerText = trail.name;
+//         document.body.append(p);
+//       }
+//     });
+// });
+
+// const form = document.
+//   fetch("/trails/:id", {
+//     method: "GET",
+//   })
