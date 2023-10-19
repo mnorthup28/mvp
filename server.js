@@ -23,6 +23,7 @@ app.get("/", (req, res) => {
 
 app.get("/trails", (req, res) => {
   client.query("SELECT * FROM trailTable").then((result) => {
+    console.log;
     res.json(result.rows);
   });
 });
@@ -32,7 +33,16 @@ app.get("/trails/:id", (req, res) => {
   client
     .query(`SELECT * FROM trailTable WHERE id = $1`, [trailId])
     .then((data) => {
+      if (data.rows.length == 0) {
+        console.log("Not a valid trail");
+        res.sendStatus(404);
+      }
+      res.json(data.rows[0]);
       console.log(data.rows[0]);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
     });
 });
 
