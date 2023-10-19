@@ -27,6 +27,15 @@ app.get("/trails", (req, res) => {
   });
 });
 
+app.get("/trails/:id", (req, res) => {
+  const trailId = req.params.id;
+  client
+    .query(`SELECT * FROM trailTable WHERE id = $1`, [trailId])
+    .then((data) => {
+      console.log(data.rows[0]);
+    });
+});
+
 app.listen(PORT, () => {
   console.log(`Listening on ${PORT}`);
 });

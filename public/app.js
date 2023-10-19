@@ -1,11 +1,12 @@
 console.log("here");
-fetch("/trailDB").then((response) => {
-  console.log(response);
-  return response.json();
+
+const distanceInput = document.getElementById("distance");
+const distanceValue = document.getElementById("distanceValue");
+
+distanceInput.addEventListener("input", function () {
+  if (distanceInput.value == 10) {
+    distanceValue.textContent = "10+ Miles";
+  } else {
+    distanceValue.textContent = distanceInput.value + " Miles";
+  }
 });
-//   .then((trails) => {
-//     for(let trail of trails) {
-//         const p = document.createElement('p')
-//         p.innerText =
-//     }
-//   });
