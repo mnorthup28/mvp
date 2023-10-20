@@ -2,3 +2,27 @@
   background-size: cover;
   height: 100%;
 }
+
+#title {
+  display: flex;
+  justify-content: center;
+}
+
+#container {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#selector {
+  flex: 1;
+  padding: 20px;
+}
+
+#trailList {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}

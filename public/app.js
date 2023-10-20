@@ -1,3 +1,5 @@
+const trailContainer = document.getElementById("trailList");
+
 const distanceInput = document.getElementById("distance");
 const distanceValue = document.getElementById("distanceValue");
 
@@ -11,25 +13,22 @@ distanceInput.addEventListener("input", function () {
   }
 });
 
-const form = document.getElementsByClassName("submit");
-form.addEventListener("click", (event) => {
+const form = document.querySelector(".submit");
+form.addEventListener("submit", (event) => {
   event.preventDefault();
   console.log("hello");
+  fetch("/trails")
+    .then((response) => {
+      return response.json();
+    })
+    .then((trails) => {
+      trailContainer.innerText = "";
+      for (let trail of trails) {
+        const p = document.createElement("p");
+        p.innerText = trail.name;
+        trailContainer.style.backgroundColor = "rgba(255, 255, 255, 0.7)";
+        trailContainer.style.borderColor = "#ccc";
+        trailContainer.append(p);
+      }
+    });
 });
-//   fetch("/trails")
-//     .then((response) => {
-//       return response.json();
-//     })
-//     .then((trails) => {
-//       for (let trail of trails) {
-//         const p = document.createElement("p");
-//         p.innerText = trail.name;
-//         document.body.append(p);
-//       }
-//     });
-// });
-
-// const form = document.
-//   fetch("/trails/:id", {
-//     method: "GET",
-//   })

@@ -12,41 +12,45 @@
     background="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_534,q_75,w_800/v1/clients/manhattanks/190620171_09f3d9e6-52df-4d17-88f0-c84db1ac9c75.jpg"
   >
     <div id="header">
-      <h1>Run Through the Flint Hills</h1>
+      <h1 id="title">Run Through the Flint Hills</h1>
     </div>
     <br />
     <br />
-    <div id="selector">
-      <h3>Where would you like to run?</h3>
-      <form id="form" class="submit">
-        <label for="distance">Distance? (required)</label>
-        <input type="range" id="distance" name="dis" min="0" max="10" />
-        <span id="distanceValue">0 Miles</span>
-        <br /><br />
+    <div id="container">
+      <div id="selector">
+        <h3>Where would you like to run?</h3>
+        <br />
+        <form id="form" class="submit">
+          <label for="distance">Distance?</label>
+          <input type="range" id="distance" name="dis" min="0" max="10" />
+          <span id="distanceValue">0 Miles</span>
+          <br /><br />
 
-        <label for="paved">Hard Surface? (optional)</label>
-        <input type="radio" id="paved" name="surface" />
-        <label for="paved">Paved</label>
-        <input type="radio" id="gravel" name="surface" />
-        <label for="paved">Gravel</label>
-        <br /><br />
+          <label for="paved">Hard Surface?</label>
+          <input type="radio" id="paved" name="surface" />
+          <label for="paved">Paved</label>
+          <input type="radio" id="gravel" name="surface" />
+          <label for="paved">Gravel</label>
+          <br /><br />
 
-        <label for="hill">Hill Run? (optional)</label>
-        <input type="radio" id="hill" name="elevation" />
-        <label for="hill">Hills</label>
-        <input type="radio" id="flat" name="elevation" />
-        <label for="hill">Flat Ground</label>
-        <br /><br />
+          <label for="hill">Hill Run?</label>
+          <input type="radio" id="hill" name="elevation" />
+          <label for="hill">Hills</label>
+          <input type="radio" id="flat" name="elevation" />
+          <label for="hill">Flat Ground</label>
+          <br /><br />
 
-        <label for="yes">On Fort Riley? (optional)</label>
-        <input type="radio" id="yes" name="onBase" />
-        <label for="yes">Yes</label>
-        <input type="radio" id="no" name="onBase" />
-        <label for="no">No</label>
-        <br /><br />
+          <label for="yes">On Fort Riley?</label>
+          <input type="radio" id="yes" name="onBase" />
+          <label for="yes">Yes</label>
+          <input type="radio" id="no" name="onBase" />
+          <label for="no">No</label>
+          <br /><br />
 
-        <input id="submit" type="submit" value="Submit" />
-      </form>
+          <input id="submit" type="submit" value="Submit" />
+        </form>
+      </div>
+      <div id="trailList"></div>
     </div>
   </body>
 </html>
