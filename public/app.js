@@ -13,6 +13,8 @@ distanceInput.addEventListener("input", function () {
   }
 });
 
+// make container to hold matching results.
+// look into filter an object javascript
 const form = document.querySelector(".submit");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -30,27 +32,6 @@ form.addEventListener("submit", (event) => {
         trailContainer.style.borderColor = "#ccc";
         trailContainer.append(p);
       }
-    });
-});
-
-const postForm = document.getElementById("userSubmit");
-const submitValue = document.getElementsByClassName("submitValue")[0];
-postForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  console.log("is this working?");
-  const dataToSend = {
-    submitValue: submitValue.value,
-  };
-  fetch("/trails", {
-    method: "POST",
-    body: JSON.stringify(dataToSend),
-    headers: {
-      "content-type": "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      data.value = "";
     });
 });
 
