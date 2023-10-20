@@ -32,3 +32,31 @@ form.addEventListener("submit", (event) => {
       }
     });
 });
+
+const postForm = document.getElementById("userSubmit");
+const submitValue = document.getElementsByClassName("submitValue")[0];
+postForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  console.log("is this working?");
+  const dataToSend = {
+    submitValue: submitValue.value,
+  };
+  fetch("/trails", {
+    method: "POST",
+    body: JSON.stringify(dataToSend),
+    headers: {
+      "content-type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      data.value = "";
+    });
+});
+
+// Example of how to get fetch with query params from medium.com
+// fetch( 'https://domain.com/path/?param1=value1&param2=value2' )
+//     .then( response => response.json() )
+//     .then( response => {
+//         // Do something with response.
+//     } );

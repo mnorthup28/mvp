@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS trailTable;
-
+DROP TABLE IF EXISTS trailSuggestionTable;
 -- DB called trailDB, Table called trailTable --
 
 CREATE TABLE trailTable (
@@ -10,6 +10,11 @@ CREATE TABLE trailTable (
     hard_surface BOOLEAN,
     hills BOOLEAN,
     military_id_needed BOOLEAN
+);
+
+CREATE TABLE trailSuggestionTable (
+    id SERiAL,
+    name TEXT
 );
 
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
@@ -39,7 +44,7 @@ VALUES ('City Park', 'Manhattan', 1, true, false, false);
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
 VALUES ('Fancy Creek', 'Manhattan', 6, false, false, false);
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
-VALUES ('Linear', 'Manhattan', 9, true, false, false);
+VALUES ('Linear Park', 'Manhattan', 9, true, false, false);
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
 VALUES ('NorthEast Community Park', 'Manhattan', 2, true, false, false);
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 

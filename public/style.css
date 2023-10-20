@@ -26,3 +26,16 @@
   border: 1px solid transparent;
   border-radius: 5px;
 }
+
+#userSubmit {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  text-align: center;
+  display: inline-block; /* Make the element inline-block */
+  border: 1px solid #333; /* Use a thinner 1px solid border */
+  border-radius: 5px;
+}

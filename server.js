@@ -59,19 +59,26 @@ app.get("/trails/:id", (req, res) => {
     });
 });
 
-// query parameters.
-// app.get("/trails/:id/:hills", (req, res) => {
-//   const hillsBool = req.params.hills;
-//   client
-//     .query(`SELECT * FROM trailsTable WHERE hills = $1`, [hillsBool])
-//     .then((data) => {
-//       res.json(data);
-//     })
-//     .catch((err) => {
-//       console.error(err);
-//       res.sendStatus(500);
-//     });
-// });
+app.post("/trails", (req, res) => {
+  const { name } = req.body;
+  if (req.body.length === 0) {
+    res.sendStatus(400);
+  }
+  const newTrail = { name };
+  console.log("new trail: ", newTrail);
+  client
+    .query(`INSERT INTO trailSuggestionTable (name) VALUES ($1) RETURNING *`, [
+      name,
+    ])
+    .then((data) => {
+      console.log(data.rows[0]);
+      res.send(data.rows[0]);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+});
 
 app.listen(PORT, () => {
   console.log(`Listening on ${PORT}`);
