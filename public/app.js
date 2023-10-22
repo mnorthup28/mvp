@@ -15,10 +15,48 @@ distanceInput.addEventListener("input", function () {
 
 // make container to hold matching results.
 // look into filter an object javascript
+
+const slider = document.getElementById("distance");
+const gravelSurface = document.getElementById("gravel");
+const paved = document.getElementById("paved");
 const form = document.querySelector(".submit");
+const hill = document.getElementById("hills");
+const flat = document.getElementById("flat");
+const military = document.getElementById("yes");
+const nonMilitary = document.getElementById("no");
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  console.log("hello");
+  let sliderValue = slider.value;
+  let surfaceValue = undefined;
+  let hillValue = undefined;
+  let milValue = undefined;
+  if (gravelSurface.checked) {
+    surfaceValue = gravelSurface.id;
+  } else if (paved.checked) {
+    surfaceValue = paved.id;
+  } else {
+    alert("Please select a surface type");
+  }
+
+  if (hill.checked) {
+    hillValue = hill.id;
+  } else if (flat.checked) {
+    hillValue = flat.id;
+  } else {
+    alert("Please select if you want hills or not.");
+  }
+  if (military.checked) {
+    milValue = yes.id;
+  } else if (nonMilitary.checked) {
+    milValue = no.id;
+  } else {
+    alert("Please select if you want to go to base today.");
+  }
+  console.log(sliderValue);
+  console.log(surfaceValue);
+  console.log(hillValue);
+  console.log(milValue);
   fetch("/trails")
     .then((response) => {
       return response.json();
@@ -26,18 +64,18 @@ form.addEventListener("submit", (event) => {
     .then((trails) => {
       trailContainer.innerText = "";
       for (let trail of trails) {
-        const p = document.createElement("p");
-        p.innerText = trail.name;
-        trailContainer.style.backgroundColor = "rgba(255, 255, 255, 0.7)";
-        trailContainer.style.borderColor = "#ccc";
-        trailContainer.append(p);
+        if (
+          trail.distance >= sliderValue &&
+          trail["hard_surface"] === surfaceValue &&
+          trail.hills === hillValue &&
+          trail["military_id_needed"] === milValue
+        ) {
+          const p = document.createElement("p");
+          p.innerText = trail.name;
+          trailContainer.style.backgroundColor = "rgba(255, 255, 255, 0.7)";
+          trailContainer.style.borderColor = "#ccc";
+          trailContainer.append(p);
+        }
       }
     });
 });
-
-// Example of how to get fetch with query params from medium.com
-// fetch( 'https://domain.com/path/?param1=value1&param2=value2' )
-//     .then( response => response.json() )
-//     .then( response => {
-//         // Do something with response.
-//     } );

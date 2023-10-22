@@ -7,9 +7,9 @@ CREATE TABLE trailTable (
     name TEXT,
     location TEXT,
     distance DECIMAL(4,1),
-    hard_surface BOOLEAN,
-    hills BOOLEAN,
-    military_id_needed BOOLEAN
+    hard_surface TEXT,
+    hills TEXT,
+    military_id_needed TEXT
 );
 
 CREATE TABLE trailSuggestionTable (
@@ -18,38 +18,38 @@ CREATE TABLE trailSuggestionTable (
 );
 
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
-VALUES ('Konza Prairie', 'South of Manhattan', 6.2, false, true, false);
+VALUES ('Konza Prairie', 'South of Manhattan', 6.2, 'gravel', 'hills', 'no');
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
-VALUES ('Konza Prairie Shorter Loop 1', 'South of Manhattan', 4.6, false, true, false);
+VALUES ('Konza Prairie Shorter Loop 1', 'South of Manhattan', 4.6, 'gravel', 'hills', 'no');
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
-VALUES ('Konza Prairie Shorter Loop 2', 'South of Manhattan', 2.6, false, true, false);
+VALUES ('Konza Prairie Shorter Loop 2', 'South of Manhattan', 2.6, 'gravel', 'hills', 'no');
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
-VALUES ('Linear Trail', 'Manhattan', 10, false, false, false);
+VALUES ('Linear Trail', 'Manhattan', 10, 'gravel', 'hills', 'no');
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
-VALUES ('Riverwalk Trail', 'Junction City', 4.7, false, false, false);
+VALUES ('Riverwalk Trail', 'Junction City', 4.7, 'gravel', 'flat', 'no');
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
-VALUES ('Anneberg Park', 'Manhattan', 2, true, false, false);
+VALUES ('Anneberg Park', 'Manhattan', 2, 'paved', 'flat', 'no');
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
-VALUES ('Hudson Trail', 'Manhattan', 1, true, true, false);
+VALUES ('Hudson Trail', 'Manhattan', 1, 'paved', 'hills', 'no');
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
-VALUES ('Washington/Marlatt Trail', 'North of Manhattan', 4, false, true, false);
+VALUES ('Washington/Marlatt Trail', 'North of Manhattan', 4, 'gravel', 'hills', 'no');
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
-VALUES ('Moon Lake Trail', 'Fort Riley', 1, false, true, true);
+VALUES ('Moon Lake Trail', 'Fort Riley', 1, 'gravel', 'hills', 'yes');
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
-VALUES ('Whitside Loop Trail', 'Fort Riley', 2, true, true, true);
+VALUES ('Whitside Loop Trail', 'Fort Riley', 2, 'paved', 'hills', 'yes');
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
-VALUES ('Custer Hill Trails', 'Fort Riley', 11, true, true, true);
+VALUES ('Custer Hill Trails', 'Fort Riley', 11, 'paved', 'flat', 'yes');
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
-VALUES ('City Park', 'Manhattan', 1, true, false, false);
+VALUES ('City Park', 'Manhattan', 1, 'paved', 'flat', 'no');
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
-VALUES ('Fancy Creek', 'Manhattan', 6, false, false, false);
+VALUES ('Fancy Creek', 'Manhattan', 6, 'gravel', 'flat', 'no');
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
-VALUES ('Linear Park', 'Manhattan', 9, true, false, false);
+VALUES ('Linear Park', 'Manhattan', 9, 'paved', 'flat', 'no');
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
-VALUES ('NorthEast Community Park', 'Manhattan', 2, true, false, false);
+VALUES ('NorthEast Community Park', 'Manhattan', 2, 'paved', 'flat', 'no');
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
-VALUES ('Randolph State Park', 'Manhattan', 8, false, true, false);
+VALUES ('Randolph State Park', 'Manhattan', 8, 'gravel', 'hills', 'no');
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
-VALUES ('Kansas River Water Trail', 'Kansas', 173, false, false, false);
+VALUES ('Kansas River Water Trail', 'Kansas', 173, 'gravel', 'flat', 'no');
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
-VALUES ('Republican River Trail', 'Junction City', 9.6, false, false, false);
+VALUES ('Republican River Trail', 'Junction City', 9.6, 'gravel', 'flat', 'no');
