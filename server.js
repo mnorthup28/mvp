@@ -1,6 +1,7 @@
 import express from "express";
 import pg from "pg";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ const client = new pg.Client({
 
 await client.connect();
 
+app.use(cors({ origin: "*", methods: "get" }));
 const app = express();
 
 app.use(express.static("public"));
