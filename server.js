@@ -13,8 +13,8 @@ const client = new pg.Client({
 
 await client.connect();
 
-app.use(cors({ origin: "*", methods: "get" }));
 const app = express();
+app.use(cors({ origin: "*", methods: "get" }));
 
 app.use(express.static("public"));
 app.use(express.json());
