@@ -53,3 +53,7 @@ INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_i
 VALUES ('Kansas River Water Trail', 'Kansas', 173, 'gravel', 'flat', 'no');
 INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
 VALUES ('Republican River Trail', 'Junction City', 9.6, 'gravel', 'flat', 'no');
+INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
+VALUES ('Army 10 mile route', 'Fort Riley', 10, 'paved', 'flat', 'yes');
+INSERT INTO trailTable(name, location, distance, hard_surface, hills, military_id_needed) 
+VALUES ('ACFT Route', 'Fort Riley', 2, 'paved', 'flat', 'yes');
