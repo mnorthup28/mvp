@@ -57,7 +57,8 @@ form.addEventListener("submit", (event) => {
   console.log(surfaceValue);
   console.log(hillValue);
   console.log(milValue);
-  fetch("/trails")
+  // `/trails?hills=${hillValue}&` add rest to make query params work
+  fetch(`/trails`)
     .then((response) => {
       return response.json();
     })
@@ -75,6 +76,7 @@ form.addEventListener("submit", (event) => {
           trailContainer.style.backgroundColor = "rgba(255, 255, 255, 0.7)";
           trailContainer.style.borderColor = "#ccc";
           trailContainer.append(p);
+          console.log("creating paragraph");
         }
       }
     });
