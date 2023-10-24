@@ -59,7 +59,7 @@ app.get("/trails/:id", (req, res) => {
     });
 });
 
-app.post("/trails", (req, res) => {
+app.post("/trailsuggest", (req, res) => {
   const { name } = req.body;
   if (req.body.length === 0) {
     res.sendStatus(400);
@@ -73,6 +73,26 @@ app.post("/trails", (req, res) => {
     .then((data) => {
       console.log(data.rows[0]);
       res.send(data.rows[0]);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+});
+
+app.delete("/trailsuggest/:id", (req, res) => {
+  const trailId = Number.parseInt(req.params.id);
+  client
+    .query(`DELETE FROM trailsuggestiontable WHERE id = $1 RETURNING *`, [
+      trailId,
+    ])
+    .then((data) => {
+      if (data.rows[0] !== undefined) {
+        res.json(data.rows[0]);
+        res.status(200);
+      } else {
+        res.sendStatus(404);
+      }
     })
     .catch((err) => {
       console.error(err);

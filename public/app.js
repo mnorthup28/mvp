@@ -81,3 +81,30 @@ form.addEventListener("submit", (event) => {
       }
     });
 });
+
+const suggest = document.getElementById("suggestionform");
+
+suggest.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(event.target);
+  const suggestionValue = formData.get("text");
+
+  const requestBody = {
+    suggestion: suggestionValue,
+  };
+
+  console.log(requestBody);
+
+  fetch(`/trailsuggest`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(requestBody),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("data created: ", data);
+    });
+});
