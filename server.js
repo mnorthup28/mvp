@@ -60,15 +60,15 @@ app.get("/trails/:id", (req, res) => {
 });
 
 app.post("/trailsuggest", (req, res) => {
-  const { name } = req.body;
+  const { suggestion } = req.body;
   if (req.body.length === 0) {
     res.sendStatus(400);
   }
-  const newTrail = { name };
+  const newTrail = { suggestion };
   console.log("new trail: ", newTrail);
   client
     .query(`INSERT INTO trailSuggestionTable (name) VALUES ($1) RETURNING *`, [
-      name,
+      suggestion,
     ])
     .then((data) => {
       console.log(data.rows[0]);

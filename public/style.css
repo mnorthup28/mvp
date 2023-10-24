@@ -22,7 +22,55 @@
 
 #trailList {
   flex: 1;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid transparent;
   border-radius: 5px;
+}
+
+#suggestionform {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  max-width: 200px;
+}
+
+#suggestiondiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+h4 {
+  margin: 0;
+}
+
+#suggestion {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+  margin: 5px 0;
+}
+
+#trailsuggestion {
+  background-color: #0074d9;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#trailsuggestion:hover {
+  background-color: #0056a4;
 }

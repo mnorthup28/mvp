@@ -87,8 +87,7 @@ const suggest = document.getElementById("suggestionform");
 suggest.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const formData = new FormData(event.target);
-  const suggestionValue = formData.get("text");
+  const suggestionValue = document.getElementById("suggestion").value;
 
   const requestBody = {
     suggestion: suggestionValue,
@@ -103,7 +102,9 @@ suggest.addEventListener("submit", (event) => {
     },
     body: JSON.stringify(requestBody),
   })
-    .then((response) => response.json())
+    .then((response) => {
+      return response.json();
+    })
     .then((data) => {
       console.log("data created: ", data);
     });
