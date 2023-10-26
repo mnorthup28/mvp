@@ -1,6 +1,6 @@
 # Run Through the Flint Hills
 
-![Project Image](https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_534,q_75,w_800/v1/clients/manhattanks/190620171_09f3d9e6-52df-4d17-88f0-c84db1ac9c75.jpg)
+![Project Image](![image](https://github.com/mnorthup28/mvp/assets/143556399/f6206164-077f-453d-99b3-a1ddb91167a6))
 
 ## Table of Contents
 - [Description](#description)
